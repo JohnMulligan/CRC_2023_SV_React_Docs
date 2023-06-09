@@ -14,7 +14,7 @@ The Range Slider is used for selecting value ranges for numberic values. The com
 
 An example Range Slider component looks like following: 
 
-![Example Range Slider](./Slider.png)
+![Example Range Slider](../../assets/Slider.png)
 
 
 ### External Component Used 

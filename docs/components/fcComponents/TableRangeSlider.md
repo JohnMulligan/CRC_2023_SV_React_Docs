@@ -32,7 +32,7 @@ Here's how it works:
 By following this process, the user can dynamically select ranges and observe the selected values in the table.
 An example Range Slider component looks like following: 
 
-![Example Table Range Slider](./tableRangeSlider.png)
+![Example Table Range Slider](../../assets/tableRangeSlider.png)
 
 
 ### External Component Used 
