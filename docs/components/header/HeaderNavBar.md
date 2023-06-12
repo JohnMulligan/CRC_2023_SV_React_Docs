@@ -44,7 +44,7 @@ export default function HeaderNavBarMenu(props: HeaderNavBarMenuProps) {
 }
 ```
 
-`Props`
+## Props
 - `currentPage`: The current page state from Redux store.
 - `isFilter`: The filter state.
 - `setIsFilter`: Function to set the filter state.
@@ -78,4 +78,7 @@ function App() {
 
 export default App;
 ```
+
+![aggregation](../../assets/headNav.png)
+
 That's it! You can now use the HeaderNavBarMenu component to display the header navigation bar menu in your application.

@@ -51,6 +51,7 @@ function App() {
 
 export default App;
 ```
+![aggregation](../../assets/logohead.png)
 
 That's it! You can now use the HeaderLogoSearch component to display the header logo and search bar in your application.
 

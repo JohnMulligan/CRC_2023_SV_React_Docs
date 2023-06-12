@@ -56,7 +56,7 @@ return (
 ```
 Make sure to provide the necessary Redux state and action dispatching logic for the component to work correctly.
 
-`Props`
+## Props
 
 The Range Slider component accepts the following props:
 

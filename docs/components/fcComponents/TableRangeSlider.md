@@ -1,6 +1,5 @@
-# TableRange Slider
-
-&nbsp;
+# TableRangeSlider
+The TableRangeSlider component combines a table view with range sliders. It enables users to interactively filter and explore data based on a specified range of values. This component is particularly useful for exploring data distributions and identifying patterns within specific ranges.
 
 ## Overview
 The TableRangeSlider component is designed to display a table with three columns. It provides a user interface to select a range of values using sliders and displays the selected range in real-time. Let's explore each column's functionality:

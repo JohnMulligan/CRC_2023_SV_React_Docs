@@ -73,7 +73,7 @@ function App() {
 export default App;
 ```
 ![aggregation](../../../assets/scatter.png)
-## `Props`
+## ## Props
 
 The Scatter component does not accept any props. However, it relies on the Redux store for managing state and fetching data from the API.
 

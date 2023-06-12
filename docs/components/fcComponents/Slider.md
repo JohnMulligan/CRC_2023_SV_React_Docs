@@ -1,7 +1,6 @@
-
+# Slider
+The Slider component provides a user-friendly interface for selecting a value within a specified range. It allows users to adjust a numerical value by dragging a slider handle along a track. This component is commonly used for filtering and parameter selection.
 ## Range Slider
-
-&nbsp;
 
 
 The Range Slider is used for selecting value ranges for numberic values. The component uses MUI components `Slider` and `Input` and support features including: 
