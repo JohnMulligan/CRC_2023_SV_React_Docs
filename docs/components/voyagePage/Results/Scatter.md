@@ -1,7 +1,17 @@
 # Scatter
 
 The Scatter component is a React component that displays a scatter graph using the Plotly.js library. It fetches data from an API and allows users to customize the graph by selecting different options.
+## Installation
+Make sure you have the following dependencies installed:
 
+- React
+- Plotly.js
+- MUI (Material-UI)
+- Redux
+You can install them using npm:
+```js
+npm install react plotly.js @mui/material react-redux
+```
 ## Features
 - Fetches data from an API to populate the scatter graph.
 - Allows users to select the X and Y variables for the scatter graph.

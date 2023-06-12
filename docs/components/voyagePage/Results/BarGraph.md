@@ -13,6 +13,23 @@ You can install them using npm:
 ```js
 npm install react plotly.js @mui/material react-redux
 ```
+
+## Features
+- Fetches data from an API to populate the bar graph.
+- Allows users to select the X and Y variables for the bar graph.
+- Supports aggregation options (sum, average) for the Y variables.
+- Displays a dropdown menu for selecting options.
+- Supports multi-selection of Y variables using chips.
+- Provides a responsive layout that adapts to different screen sizes.
+## Dependencies
+
+The bar component depends on the following libraries and modules:
+
+- React: A JavaScript library for building user interfaces.
+- Plotly.js: A JavaScript graphing library based on D3.js.
+- MUI: Material-UI, a popular React UI framework.
+- React Redux: A state management library for React.
+- react-hook/window-size: A React hook for getting the window size.
 ## Usage
 Import the necessary modules:
 
