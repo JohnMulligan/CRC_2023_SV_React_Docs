@@ -101,4 +101,4 @@ The SelectDropdown component accepts the following props:
 ![aggregation](../../../assets/dropdownY.png)
 
 <br/>
-That's it! You can now use the `RangeSlider` component to provide min and max values in your application.
+That's it! You can now use the `SelectDropdown` component to provide min and max values in your application.
