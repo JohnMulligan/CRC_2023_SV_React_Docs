@@ -1,4 +1,4 @@
-## Home Component
+# Home Component
 
 This component represents the home page of the application.
 
@@ -13,11 +13,11 @@ const HOME: React.FC = () => {
   const [isFilter, setIsFilter] = useState<boolean>(false);
 
   return (
-    <>
+    <div>
       <HeaderLogoSearch />
       <HeaderNavBar isFilter={isFilter} setIsFilter={setIsFilter} />
       <ScrollPage isFilter={isFilter} setIsFilter={setIsFilter} />
-    </>
+    </div>
   );
 };
 

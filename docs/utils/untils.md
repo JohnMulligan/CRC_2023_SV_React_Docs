@@ -12,11 +12,11 @@ The "utils" folder in this application contains utility functions and helper mod
 
 The folder contains multiple utility files, each focusing on a specific area or functionality. This modular approach allows for easier maintenance and separation of concerns.
 
-<h3> getEnumColumnParams.ts </h3>
-This file includes utility functions related to the table column will cellRenderer 
+- ```getEnumColumnParams.ts```
+This file includes utility functions related to the table column with cellRenderer 
 
-<br>
-<h3> transatlantic_voyages_filter_menu.json && transatlantic_voyages_filter_menuTEST.json </h3>
+- ```transatlantic_voyages_filter_menu.json && transatlantic_voyages_filter_menuTEST.json```
+
 This file file provides utility datas as json for working with voyages filter and displays on the menu bar, will call from the function 
 <code>getOptionsFlatObjSlice</code>
 in the reduce reducer.
@@ -46,17 +46,17 @@ export default getOptionsFlatObjSlice.reducer;
 ## Display at the menu bar
 ![getOptionsFlatMenu](../assets/menu.png)
 
-<br>
-<h3>VOYAGE_BARGRAPH_OPTIONS.json && VOYAGE_SCATTER_OPTIONS.json </h3>
+
+- ```VOYAGE_BARGRAPH_OPTIONS.json && VOYAGE_SCATTER_OPTIONS.json```
 This file file provides utility datas as json to display with BarGraph and Scatter as the dropdown selection menu
 <code>getOptionsFlatObjSlice</code>
 in the <code>BarGraph.tsx</code> and  <code>Scatter.tsx</code>
 
 
-<code>Scatter.tsx</code>
+- <code>Scatter.tsx</code>
 ![Scatter](../assets/scatterDropdown.png)
 
-<code>BarGraph.tsx</code> 
+- <code>BarGraph.tsx</code> 
 ![Scatter](../assets/barGraphDropdown.png)
 
 

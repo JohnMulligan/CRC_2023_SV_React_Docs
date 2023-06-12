@@ -12,7 +12,8 @@ Mkdocs documents:
 ## Prerequisites
 Make sure you have Node.js and npm (Node Package Manager) installed on your machine. You can download and install them from the official Node.js website: https://nodejs.org.
 
-### Code Structure 
+
+## Code Structure 
 ```
 ----main.md
             |-Component_Home.md-|-Canscanding.md 
@@ -56,7 +57,7 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
             |-share.md          |-AUTH_BASEURL.md 
             |                   |-InterfaceTypeNav.md 
             |                   |-InterfaceTypes.md
-            |-style.md          |-All css && scss files style are in here to share to the whole app
+            |-style.md          |-All css && scss files styles are in here to share to the whole app
             |-utils.md          |-getEnumColumnParams.ts
             |                   |-transatlantic_voyages_filter_menu.json
             |                   |-transatlantic_voyages_filter_menuTEST.json

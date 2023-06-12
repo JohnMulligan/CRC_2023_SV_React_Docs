@@ -1,4 +1,4 @@
-## Voyages Application Interfaces
+# Voyages Application Interfaces
 This folder contains a collection of interfaces used in the Voyages application. These interfaces define the structure and types of various objects and data used throughout the application.
 
 ## `Table of Contents`
