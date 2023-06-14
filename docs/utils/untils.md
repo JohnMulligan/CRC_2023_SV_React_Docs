@@ -3,10 +3,11 @@ The "utils" folder in this application contains utility functions and helper mod
 
 ```
 |-utils.md   |-getEnumColumnParams.ts
+|            |-createRowData.ts
 |            |-transatlantic_voyages_filter_menu.json
 |            |-transatlantic_voyages_filter_menuTEST.json
 |            |-VOYAGE_BARGRAPH_OPTIONS.json
-|            |-VOYAGE_SCATTER_OPTIONS.json
+|            |-VOYAGE_SCATTER_OPTIONS.json 
 
 ```
 
