@@ -7,7 +7,7 @@ To use the `Table` component, import it into your React application and place it
 ```jsx
 import Table from './Table';
 
-const App = () => {
+const ScrollPage = () => {
   return (
     <div>
       <h1>Table Component</h1>
