@@ -16,9 +16,12 @@ voyagePage/
         |- AggregationSumAverage.md 
         |- AutocompletedBox.md
         |- BarGraph.md 
+        |- PieGraph.tsx
         |- RangeSlider.md 
         |- Scatter.md 
         |- SelectDropdown.md 
+        |- SelectDropdownSingle.md 
+        |- Table.md 
 ```
 
 Example: 
