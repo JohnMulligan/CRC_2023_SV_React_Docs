@@ -40,7 +40,7 @@ Here is an example of how to use the `PieGraph` component:
 import { useState } from "react";
 import PieGraph from "./PieGraph";
 
-function App() {
+function ScrollPage() {
   const [showPieGraph, setShowPieGraph] = useState(true);
 
   return (
@@ -57,5 +57,6 @@ function App() {
 export default App;
 ```
 
-In this example, a button is used to toggle the visibility of the `PieGraph` component. When the button is clicked, the pie graph will be shown or hidden accordingly.
+In this example, a button is used to toggle the visibility of the `PieGraph` component. 
+When the button is clicked, the pie graph will be shown or hidden accordingly.
 
