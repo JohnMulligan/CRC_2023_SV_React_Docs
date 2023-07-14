@@ -8,12 +8,25 @@ The Fetch API folder contains modules and utilities related to making HTTP reque
 
 ## Folder Structure
 ```
-├── fetchApiService.ts
-├── fetchAutoCompleted.ts
-├── fetchOptionsData.ts
-├── fetchOptionsFlat.ts
-├── fetchRangeSliderData.ts 
-└── fetchVoyageGroupby.ts
+fetchAPI
+|──pastEnslavedApi
+    ├── fetchPastEnslavedApiService.ts
+    ├── fetchPastEnslavedAutoCompleted.ts
+    ├── fetchPastEnslavedOptionsList.ts
+    ├── fetchPastEnslavedSortedTableData
+    ├── fetchPastEnslavedRangeSliderData.ts
+|──voyagesApi
+    ├── fetchApiService.ts
+    ├── fetchAutoCompleted.ts
+    ├── fetchOptionsData.ts
+    ├── fetchOptionsFlat.ts
+    ├── fetchRangeSliderData.ts 
+    ├── fetchVoyageGroupby.ts
+    ├── fetchVoyageOptionsPagination.ts
+    ├── fetchVoyagesOptionsApi.ts
+    └── fetchVoyageSortedData.ts
+
+
 ```
 - ```fetchApiService.ts```
 This module encapsulates the ```voyagesApi``` function
