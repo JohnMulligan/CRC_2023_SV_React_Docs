@@ -22,7 +22,7 @@ function App() {
     <div>
       {/* Your other components */}
      <Dialog
-        BackdropProps={{ style: { backgroundColor: "transparent" } }}
+        BackdropProps={{ style: { backgroundColor: "transparent", width: 400 } }}
         sx={StyleDialog}
         open={isOpenDialog}
         onClose={handleCloseDialog}
