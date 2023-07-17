@@ -16,53 +16,163 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
 ## Code Structure 
 ```
 ----main.md
-            |-Component_Home.md-|-Canscanding.md 
-            |                   |               |-CanscandingMenu.md 
-            |                   |               |-Dropdown.md 
-            |                   |               |-MenuListDropdown.md 
-            |                   |               |-NestedMenuItem.md 
-            |                   |               |-PaperDraggable.md 
-            |                   |-fcComponets.md 
-            |                   |               |-AGTable.md 
-            |                   |               |-AutocompletedTree.md 
-            |                   |               |-AutocompleteTreeView.md 
-            |                   |               |-TableCharacter.md 
-            |                   |               |-TableRangeSlider.md 
-            |                   |-header.md 
-            |                   |               |-HeaderNavBar.md 
-            |                   |               |-HeaderSearchLogo.md
-            |                   |-voyagePage.md |-Results
-            |                   |               |     |-AggregationSumAverage.md 
-            |                   |               |     |-AutocompletedBox.md 
-            |                   |               |     |-BarGraph.md 
-            |                   |               |     |-RangeSlider.md 
-            |                   |               |     |-Scatter.md 
-            |                   |               |     |-SelectDropdown.md 
-            |                   |               |-ScrollPage.md
-            |                   |               |-VoyagePage.md
-            |-fetchAPI.md       |-fetchAggregationsSlider.md 
-            |                   |-fetchApiService.md 
-            |                   |-fetchAutoCompleted.md 
-            |                   |-fetchOptionsData.md 
-            |                   |-fetchOptionsFlat.md 
-            |                   |-fetchVoyageGroupby.md
-            |-redux.md          |-store.md 
-            |                   |-getAutoCompleteSlice.md 
-            |                   |-getOptionsDataSlice.md
-            |                   |-getOptionsFlatObjSlice.md 
-            |                   |-getScatterSlice.md 
-            |                   |-getScrollPageSlice.md 
-            |                   |-getVoyageGroupbySlice.md
-            |                   |-rangeSliderSlice.md    
-            |-share.md          |-AUTH_BASEURL.md 
-            |                   |-InterfaceTypeNav.md 
-            |                   |-InterfaceTypes.md
-            |-style.md          |-All css && scss files styles are in here to share to the whole app
-            |-utils.md          |-getEnumColumnParams.ts
-            |                   |-transatlantic_voyages_filter_menu.json
-            |                   |-transatlantic_voyages_filter_menuTEST.json
-            |                   |-VOYAGE_BARGRAPH_OPTIONS.json
-            |                   |-VOYAGE_SCATTER_OPTIONS.json
-----Endpoint_request.md 
-                
+  │   ├── components
+  │   │     ├── canscanding
+  │   │     │     ├── CanscandingMenu
+  │   │     │     ├── CanscandingMenuMobile
+  │   │     │     ├── Dropdown
+  │   │     │     ├── MenuListDropdown
+  │   │     │     ├── MenuListDropdownPeople.tsx
+  │   │     │     ├── NestedMenuItem
+  │   │     │     ├── PaperDraggable
+  │   │     ├── FunctionComponents
+  │   │     │     ├──  ColumnSelectorTable
+  │   │     │     │      ├── ButtonDropdownSelectoreColumn
+  │   │     │     │      ├── ColumnSelector
+  │   │     │     │      ├── DropdownColumn
+  │   │     │     │      ├── NestedMenuColumnItem
+  │   │     │     ├── AutocompletedTree
+  │   │     │     ├── CustomHeader
+  │   │     │     ├── TableCharacter
+  │   │     │     ├── TableRangeSlider
+  │   │     │── header
+  │   │     │     ├── drawerMenuBar
+  │   │     │     ├── HeaderNavar
+  │   │     │     ├── HeaderSearchLogo
+  │   │     │── Home
+  │   │     │     ├── stylesMenu
+  │   │     │     │      ├── StyledBurger
+  │   │     │     │      ├── SytledMenu
+  │   │     │     ├── BurgerMenu
+  │   │     │     ├── Menu
+  │   │     │     ├── MenuDropdownProps
+  │   │     │── PastPeople
+  │   │     │     ├── Enslaved
+  │   │     │     │      ├── ColumnSelectorEnslavedTable
+  |   │     │     │      │      ├── ButtonDropdownSelectorEnslaved
+  │   │     │     │      ├── HeaderEnslaved
+  |   │     │     │      │      ├── HeaderEnslavedNavBar
+  │   │     │     |      ├── EnslavedPage
+  │   │     │     |      ├── EnslavedPageScrolling
+  │   │     │     |      ├── EnslavedTable
+  │   │     │     ├── Enslaved
+  │   │     │     │      ├── ColumnSelectorEnslaversTable
+  |   │     │     │      │      ├── ButtonDropdownSelectorEnslavers
+  │   │     │     │      ├── HeaderEnslavers
+  |   │     │     │      │      ├── HeaderEnslaversNavBar
+  │   │     │     |      ├── EnslaversPage
+  │   │     │     |      ├── EnslaversPageScrolling
+  │   │     │     |      ├── EnslaversTable
+  │   │     │     ├── Header
+  │   │     │     │      ├── DrawerMenuPeopleBar
+  |   │     │     │      ├── NavBarPeople
+  │   │     │     ├── PastPeoplePage
+  │   │     │── voyagePage
+  │   │     │     ├── Results
+  │   │     │     │      ├── AggregationSumAverage
+  │   │     │     │      ├── AutocompletedBox
+  │   │     │     │      ├── BarGraph
+  │   │     │     │      ├── PieGraph
+  │   │     │     │      ├── RangeSlider
+  │   │     │     │      ├── Scatter
+  │   │     │     │      ├── SelectDropdown
+  │   │     │     │      ├── VoyagesHompPage
+  │   │     │     │      ├── VoyagesTable
+  │   │     │     ├── ScrollPage
+  │   │── fetchAPI
+  │   │     ├── pastEnslavedApi
+  │   │     │     ├── fetchEnslavedOptionsList
+  │   │     │     ├── fetchPastEnslavedApiService
+  │   │     │     ├── fetchPastEnslavedAutoCompleted
+  │   │     │     ├── fetchPastEnslavedRangeSliderData
+  │   │     │     ├── fetchVoyageSortedEnslavedTableData
+  │   │     ├── voyagesApi
+  │   │     │     ├── fetchApiService
+  │   │     │     ├── fetchAutoCompleted
+  │   │     │     ├── fetchOptionsData
+  │   │     │     ├── fetchOptionsFlat
+  │   │     │     ├── fetchRangeSliderData
+  │   │     │     ├── fetchVoyageGroupby
+  │   │     │     ├── fetchVoyageOptionsPagination
+  │   │     │     ├── fetchVoyagesOptionsApi
+  │   │     │     ├── fetchVoyageSortedData
+  │   │── pages
+  │   │     ├── Enslaved
+  │   │     ├── Enslavers
+  │   │     ├── Home
+  │   │     ├── PastPage
+  │   │     ├── VoyagesPage
+  │   │── redux
+  │   │     ├── getAutoCompleteSlice
+  │   │     ├── getColumnSlice
+  │   │     ├── getDataSetCollectionSlice
+  │   │     ├── getFilterPeopleObjectSlice
+  │   │     ├── getFilterSlice
+  │   │     ├── getOptionsDataPastPeopleEnslavedSlice
+  │   │     ├── getOptionsDataSlice
+  │   │     ├── getOptionsFlatObjSlice
+  │   │     ├── getPeopleDataSetCollectionSlice
+  │   │     ├── getScrollEnlavedPageSlice
+  │   │     ├── getScrollPageSlice
+  │   │     ├── getTableSlice
+  │   │     ├── rangeSliderSlice
+  │   │     ├── store
+  │   │── share
+  │   │     ├── AUTH_BASEURL
+  │   │     ├── CONST_DATA
+  │   │     ├── InterfaceTypes
+  │   │     ├── InterfaceTypesTable
+  │   │     ├── InterfactTypesDatasetCollection
+  │   │     ├── PeopleCollectionType
+  │   │── style
+  │   │     ├── homepage.scss
+  │   │     ├── index.css
+  │   │     ├── Nav.scss
+  │   │     ├── page-past.scss
+  │   │     ├── page.scss
+  │   │     ├── Slider.scss
+  │   │     ├── table.scss
+  │   │── styleMUI
+  │   │     ├── index.ts
+  │   │     ├── thems.ts
+  │   │── tests
+  │   │     ├── components
+  │   │     ├── flat-files
+  │   │     │     ├── BARGRAPH_OPTIONS.test.ts
+  │   │     │     ├── PIECHART_OPTIONS.test.ts
+  │   │     │     ├── SCATTER_OPTIONS.test.ts
+  │   │     │     ├── Table_Cell_Structure.test.ts
+  │   │     │     ├── transatlantic_voyages_filter_menu.test.ts
+  │   │     ├── redux-test
+  │   │     │     ├── getDataSetCollection.test.ts
+  │   │     ├── untils-test
+  │   │     │     ├── valueGetter.test.ts
+  │   │── utils
+  │   │     ├── flatfiles
+  │   │     │     ├── african_origins_filter_menu.json
+  │   │     │     ├── african_origins_table_cell_structure.json
+  │   │     │     ├── enslaved_filter_menu.json
+  │   │     │     ├── enslaved_options.json
+  │   │     │     ├── enslaved_table_cell_structure.json
+  │   │     │     ├── enslaver_options.json
+  │   │     │     ├── people_page_data.json
+  │   │     │     ├── texas_filter_menu.json
+  │   │     │     ├── texas_table_cell_structure.json
+  │   │     │     ├── transatlantic_voyages_filter_menu_SIMPLE.json
+  │   │     │     ├── transatlantic_voyages_filter_menu.json
+  │   │     │     ├── varnamechecker.py
+  │   │     │     ├── VOYAGE_BARGRAPH_OPTIONS.json
+  │   │     │     ├── VOYAGE_COLLECTIONS.json
+  │   │     │     ├── VOYAGE_PIECHART_OPTIONS.json
+  │   │     │     ├── VOYAGE_SCATTER_OPTIONS.json
+  │   │     │     ├── voyage_table_cell_structure__updated21June.json
+  │   │     ├── functions
+  │   │     │     ├── generateRowsData.ts
+  │   │     │     ├── getRowsPerPage.ts
+  │   │     │     ├── getColorStyle.ts
+  │   │     │     ├── getEnumColumnParams.ts
+  │   │     │     ├── hasValueGetter.ts
+  │   │     │     ├── TableCollectionsOptions.ts
+  │   │     │     ├── traverseData.ts
+            
 ```

@@ -4,17 +4,15 @@ This folder contains a collection of interfaces used in the Voyages application.
 ## `Table of Contents`
 
 ```js
-export interface Flatlabel {
+  export interface Flatlabel {
     key: string;
     label: string;
     id: number;
     type: string;
 }
-
 export interface Options {
     [key: string]: VoyageOptionsValue;
 }
-
 export interface VoyageOptionsValue {
     type: string
     label: string
@@ -24,6 +22,7 @@ export interface VoyageOptionsValue {
 export interface IsShowProp {
     [id: string]: boolean;
 }
+
 
 export interface OptionsDataState {
     value: Record<string, never>;
@@ -37,11 +36,9 @@ export interface RangeSliderState {
     isChange?: boolean
     rangeSliderMinMax: RangeSliderMinMaxInitialState
 }
-
 export interface RangeSliderMinMaxInitialState {
     [key: string]: number[]
 }
-
 export interface AutoCompleteInitialState {
     results: [],
     total_results_count: number,
@@ -64,11 +61,34 @@ export const TYPES: {
     CharField: 'CharField'
 };
 
+export const TYPESOFDATASETPEOPLE: {
+    allEnslaved: string;
+    africanOrigins: string;
+    texas: string
+} = {
+    allEnslaved: 'all-enslaved',
+    africanOrigins: 'african-origins',
+    texas: 'texas'
+};
+
+export const TYPESOFDATASET: {
+    allVoyages: string;
+    intraAmerican: string;
+    transatlantic: string;
+    texas: string
+} = {
+    allVoyages: 'all-voyages',
+    intraAmerican: 'intra-american',
+    transatlantic: 'transatlantic',
+    texas: 'texas'
+};
+
 
 export interface AutoCompleteSliceLists {
     results: string[]
     total_results_count: number
 }
+
 
 export interface AutoCompleteLists {
     results: AutoCompleteOption[]
@@ -79,7 +99,9 @@ export interface AutoCompleteOption {
     id: number
     label: string
 }
-
+export interface InitialStateFilterMenu {
+    value: FilterMenu[]
+}
 
 export type VoyagaesFilterMenu = FilterMenu[]
 
@@ -98,13 +120,13 @@ export interface ChildrenFilter {
     type?: string
     flatlabel?: string
 }
-
 export interface ChildrenFilterArr {
     var_name: string
     type: string
     label: string
-    flatlabel: string
+    flatlabel?: string
 }
+
 
 export interface ChildrenNewObjectProp {
     varName?: string
@@ -117,7 +139,6 @@ export interface ChildrenNewObjectProp {
 export interface VoyageGroupby {
     [key: string]: VoyageGroupbyValue;
 }
-
 export interface VoyageGroupbyValue {
     [key: string]: number[]
 }
@@ -129,11 +150,30 @@ export interface plotXYProps {
 
 export interface PlotXYVar {
     var_name: string
+    type?: string
+    label: string
+}
+export interface PlotPieProps {
+    x_vars: PlotPIEX[]
+    y_vars: PlotPIEY[]
+}
+
+export interface PlotPIEX {
+    var_name: string
+    label: string
+}
+
+export interface PlotPIEY {
+    var_name: string
+    label: string
+}
+export interface BargraphXYVar {
+    var_name: string
     type: string
     label: string
 }
 
-export interface BargraphXYVar {
+export interface PiegraphXYVar {
     var_name: string
     type: string
     label: string
@@ -142,38 +182,74 @@ export interface BargraphXYVar {
 export interface ScatterOptionsXYResponse {
     [key: string]: [];
 }
-
 export interface VoyagesOptionProps {
     x_vars: string;
     y_vars: string;
 }
 
+
 export interface AutocompleteBoxProps {
     value?: AutoCompleteOption[];
 }
 
-export interface currentPageInitialState {
+export interface CurrentPageInitialState {
     currentPage: number;
     isOpenDialog: boolean
+    isOpenDialogMobile: boolean;
 }
 
 export interface HeaderNavBarMenuProps {
-    setIsFilter: React.Dispatch<React.SetStateAction<boolean>>;
-    isFilter: boolean;
     window?: () => Window;
 }
 
+
 export interface NavProps {
-    setIsFilter: React.Dispatch<React.SetStateAction<boolean>>;
-    isFilter: boolean;
     window?: () => Window;
 }
 
 export interface CanscandingMenuProps {
-    setIsFilter?: React.Dispatch<React.SetStateAction<boolean>>;
-    isFilter?: boolean;
     window?: () => Window;
 }
+
+export interface ColumnObjectProps {
+    [key: string]: string;
+}
+
+
+export interface TableColumnProps {
+    header_label: string
+    cell_type: string
+    order_by_var: string
+    cell_fields: CellVal
+}
+
+export interface CellVal {
+    display: string
+}
+
+export interface InitialStateFilterPeopleMenu {
+    value: ValuePeopleFilter
+}
+export interface ValuePeopleFilter {
+    valueEnslaved: FilterPeopleMenu[]
+    valueAfricanOrigin: FilterPeopleMenu[]
+    valueTexas: FilterPeopleMenu[]
+}
+export type FilterPeopleMenuProps = FilterPeopleMenu[]
+export interface FilterPeopleMenu {
+    label: string
+    var_name?: string
+    type?: string
+    children?: ChildrenPeopleMenu[]
+}
+
+export interface ChildrenPeopleMenu {
+    var_name: string
+    type: string
+    label: string
+    flatlabel?: string
+}
+
 ```
 
 Feel free to use these interfaces as references when working with the Voyages application. They provide the necessary structure and types for various data objects and components used in the application.

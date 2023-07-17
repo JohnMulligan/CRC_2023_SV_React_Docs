@@ -35,7 +35,6 @@ To use the getAutoCompleteSlice in other parts of the application, follow these 
 
 Example usage:
 
-
 ```jsx
 import { getAutoCompleteList, setAutoCompleteValue, setAutoLabel,setIsChangeAuto} from './path/to/getAutoCompleteSlice';
 import { useDispatch, useSelector } from 'react-redux';

@@ -8,11 +8,19 @@ The store is structured as follows:
 ```
 store/
 |- actions && reducer/
-        |- getAutoCompleteSlice.md 
-        |- getOptionsDataSlice.md
-        |- getOptionsFlatObjSlice.md 
-        |- getScrollPageSlice.md 
-        |- rangeSliderSlice.md 
+        |- getAutoCompleteSlice
+        |- getColumnSlice
+        |- getDataSetCollectionSlice
+        |- getFilterPeopleObjectSlice
+        |- getFilterSlice
+        |- getOptionsDataPastPeopleEnslavedSlice
+        |- getOptionsDataSlice
+        |- getOptionsFlatObjSlice 
+        |- getPeopleDataSetCollectionSlice
+        |- getScrollEnslavedPageSlice
+        |- getScrollPageSlice 
+        |- getTableSlice
+        |- rangeSliderSlice 
 |- store.js
 
 ```
@@ -35,15 +43,23 @@ The Redux store in the Voyages application manages the following parts of the ap
 ## Usage
 
 ```jsx
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import getOptionsDataSlice from './getOptionsDataSlice';
 import rangeSliderSlice from './rangeSliderSlice';
 import getAutoCompleteList from './getAutoCompleteSlice'
 import getOptionsFlatMenu from './getOptionsFlatObjSlice'
-import getScrollPageSlice from "./getScrollPageSlice"
-import { voyagesApi } from '../fetchAPI/fetchApiService';
-import { setupListeners } from "@reduxjs/toolkit/dist/query";
-
+import getScrollPageSlice from './getScrollPageSlice'
+import getTableSlice from './getTableSlice'
+import { voyagesApi } from '../fetchAPI/voyagesApi/fetchApiService';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import getFilterSlice from './getFilterSlice';
+import getColumnsSlice from './getColumnSlice';
+import getDataSetCollectionSlice from './getDataSetCollectionSlice'
+import getPeopleDataSetCollectionSlice from './getPeopleDataSetCollectionSlice';
+import getScrollEnslavedPageSlice from './getScrollEnslavedPageSlice';
+import getFilterPeopleObjectSlice from './getFilterPeopleObjectSlice';
+import getOptionsDataPastPeopleEnslavedSlice from './getOptionsDataPastPeopleEnslavedSlice';
+import { pastEnslavedApiService } from '@/fetchAPI/pastEnslavedApi/fetchPastEnslavedApiService';
 
 const store = configureStore({
     reducer: {
@@ -52,12 +68,21 @@ const store = configureStore({
         autoCompleteList: getAutoCompleteList,
         optionFlatMenu: getOptionsFlatMenu,
         getScrollPage: getScrollPageSlice,
+        getTableData: getTableSlice,
+        getFilter: getFilterSlice,
+        getColumns: getColumnsSlice,
+        getDataSetCollection: getDataSetCollectionSlice,
+        getPeopleDataSetCollection: getPeopleDataSetCollectionSlice,
+        getScrollEnslavedPage: getScrollEnslavedPageSlice,
+        getFilterPeople: getFilterPeopleObjectSlice,
+        getOptionsEnslaved: getOptionsDataPastPeopleEnslavedSlice,
+        [pastEnslavedApiService.reducerPath]: pastEnslavedApiService.reducer,
         [voyagesApi.reducerPath]: voyagesApi.reducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,
-        }).concat(voyagesApi.middleware)
+        }).concat([voyagesApi.middleware, pastEnslavedApiService.middleware])
 });
 
 setupListeners(store.dispatch);
@@ -66,6 +91,8 @@ export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 
 export default store;
+
+
 
 ```
 
