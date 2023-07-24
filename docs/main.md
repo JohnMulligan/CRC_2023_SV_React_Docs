@@ -1,111 +1,103 @@
 # CRC_2023_SV_React_Docs
 
-This documentation will guide you through the process of setting up a Vite React app with TypeScript, Redux Toolkit, and Material UI. Follow the steps below to get started.
+The Voyages-Frontend React App interfaces with the Voyages-API Django app.
 
-## Prerequisites
-Make sure you have Node.js and npm (Node Package Manager) installed on your machine. You can download and install them from the official Node.js website: https://nodejs.org.
- 
-**Step 1: Create a new Vite React App**
+We have attempted to adopt a factory model for as many of the components as possible, in order to allow for themes, collections, menus, etc. to be built on the fly with the addition or alteration of configuration files, which are saved as JSON in the utils folder.
 
-Open your terminal or command prompt and run the following command to create a new Vite React app with TypeScript template:
+# ROUTES AND ROUTE-LIKE REQUESTS
 
-```
-npx create-vite@latest my-app --template react-ts
-```
+Using token-based authentication, it makes POST requests to retrieve data from several API endpoints that map fairly closely to the React app's routing structure
 
-This command will create a new directory called range-slider app with the basic structure and dependencies for a Vite React app with TypeScript.
+* API ENDPOINT --> REACT ROUTE (tp60, correct these for me?)
+* voyage/ --> voyage/
+* past/ --> past/
+	* past/enslaved --> past/enslaved
+	* past/enslaver --> past/enslaver
+* blog/ --> TBD
+* doc/ --> TBD
+* geo/ --> N/A
 
+These main data retrieval endpoints map fairly closely to the React app's routing structure:
 
-**Step 2: Install Redux Toolkit and Material UI**
+![endpoint](./assets/endpoints.svg)
 
-Change to the project directory:
-```
-cd my-app
-```
+The results come back to this front-end application in the form of highly-serialized JSON that, by and large, represents the underlying ORM on the Django back-end side. This can be a bit clunky, of course, but it allows us to flexibly create react components that interact with the Django API on a per-field basis. These fields are presented using double-underscore notation (like dot notation), and they and their datatypes can be retrieved by making an OPTIONS call to any of the above API endpoints.
 
-Install Redux Toolkit and Material UI packages using the following command:
-```
-npm install @reduxjs/toolkit react-redux @mui/material @emotion/react @emotion/styled
-```
+For instance, if we wanted only to retrieve Voyages that disembarked captives in Texas, we would do the following:
 
-**Step 3: Configure Redux Toolkit**
-In the ```src``` directory, create a new directory called ```redux```. Inside the ```redux``` directory, create a file called ```store.ts```. 
-This file will contain the configuration for your Redux store.
+	POST: /voyage/
+	{
+	  "voyage_itinerary__imp_principal_region_slave_dis__geo_location__name" : ["Texas"]
+	}
 
-Add the following code to store.ts:
+In fact, we built this app on a "collections" model, where the apps load configuration files that have base queries. So, for instance, the route /voyage/texas-bound has the above filter baked into its section of the VOYAGES_COLLECTIONS.json flat file.
 
-```javascript
-import { configureStore } from "@reduxjs/toolkit";
-import getOptionsReducer from './opptionsDataSlice';
-import getRangeSliderReducer from './getRangeSliderSlice';
-import { voyagesApi } from '../fetchAPI/fetchApiService';
+# COMPONENT FACTORIES
 
-const store = configureStore({
-    reducer: {
-        getOptions: getOptionsReducer,
-        getRangeSlider: getRangeSliderReducer,
-        [voyagesApi.reducerPath]: voyagesApi.reducer
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: false,
-        }).concat(voyagesApi.middleware)
-});
+Our components are built on the factory model in order to enable editors to change things like the structure of menus, tables, dropdown selectors, etc. The inputs into these components are laid out in json flatfiles in utils/flatfiles.
 
-export default store;
-```
+NOTE: We are having a bit of trouble de-duping our code, specifically:
 
-**Step 4: Set Up Redux Slices**
-In the ```src``` directory, create a new directory called ```redux```. This directory will contain your Redux "slices" - individual pieces of state and logic managed by Redux Toolkit.
+* cascading menu
+* table
+* column selector
 
-Create a sample feature slice by creating a file called ```optionsDataSlice.ts```  inside the ```redux``` directory. Add the following code to ```optionsDataSlice.ts```:
-```javascript
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { OptionsDataState } from '../share/TableRangeSliderType'
+all need to be reduced to a single table, but the state seems to be carrying over -- so that when we use the same table component factory between voyages and past/enslaved or past/enslaver, we see the wrong endpoints and variables being used.
 
+## Filter components
 
-const initialState: OptionsDataState = {
-    value: {},
-};
+### Cascading Menu Factory
 
-export const optionsDataSlice = createSlice({
-    name: "optionsData",
-    initialState,
-    reducers: {
-        getOptions: (state, action: PayloadAction<Record<string, unknown>>) => {
-            state.value = action.payload;
-        },
-    },
-});
+Filter menus are specified in the utils/flatfiles folder, with filenames like ```texas_filter_menu.json```. In these files, we lay out the hierarchy of the filter menu, and the django var names and data types of the individual variables that the user can filter on. For example:
 
-export const { getOptions } = optionsDataSlice.actions;
-export default optionsDataSlice.reducer;
+	[...
+		{
+		"label": "Itinerary",
+		"children": [
+			{
+				"var_name": "voyage__voyage_ship__ship_name",
+				"type": "CharField",
+				"label": "Ship Name"
+			},
+			{
+				"var_name": "voyage__voyage_itinerary__imp_principal_place_of_slave_purchase__geo_location__value",
+				"type": "GeoField",
+				"label": "Place of embarkation"
+			},
+			...
+		]},
+		...
+	]
 
-```
+When a user clicks on one of these filterable variables in the cascading menu, they see pop up a filter component generated by the appropriate component factory.
 
-**Step 5: Configure Material UI**
+### Filter Component Factory
 
-In the ```src``` directory, create a file called App.tsx and replace its contents with the following code:
+Based on the type of the variable as specified in the filter menu json flatfile, when a user clicks on that variable label, the appropriate component factory is created by feeding it the targeted endpoint and the variable name.
 
-```javascript
-import TableRangeSlider from './components/TableRangeSlider'
-import { QueryClient, QueryClientProvider } from "react-query";
-import { Provider } from 'react-redux';
-import store from './redux/store';
+From that point on, the filter component that has been generated updates the Redux store to maintain the active variable filters that the user has selected. Currently, we only have 3 filter components:
 
-function App() {
+* RangeSlider for numeric fields
+* AutoComplete for text fields
+* TreeSelect for places (To come)
 
-  const queryClient = new QueryClient()
+Autocomplete remains in constant contact with its own, special sub-endpoint on the API in order to assist the user in quickly narrowing down their search. RangeSlider and TreeSelect only hit the API once, in order to populate the available choices.
 
-  return (
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <HOME />
-      </QueryClientProvider>
-    </Provider>
-  )
-}
-export default App;
+![filtercomponentfactory](./assets/filtercomponentfactory.svg)
 
+When these filter components are interacted with by the user, the selected values are pushed to the Redux store as k/v pairs, with the variable name being the key and the selected values being the values.
 
-```
+## Presentation Components
+
+"Presentation" components are where the user sees the results of the queries they have made. Our presentation components
+
+* Scatter Graph
+* Bar Graph
+* Pie Graph
+* Table
+* Map (to come)
+	* Geo Sankeys
+	* Animations
+* Pivot Table (to come)
+
+Presentation components subscribe to the Redux store, and update when its contents update. This allows the user to select a filter, begin using it, and immediately see the results of the presentation component update on the basis of their choices. All components on a given collection page subscribe to the same store.
