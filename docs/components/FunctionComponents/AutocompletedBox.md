@@ -98,6 +98,6 @@ export default App;
 ```
 <br/>
 
-![aggregation](../../../assets/autobox.png)
+![aggregation](../../assets/autobox.png)
 
 That's it! You can now use the AutocompleteBox component to provide an autocomplete box with multiple selection options in your application.

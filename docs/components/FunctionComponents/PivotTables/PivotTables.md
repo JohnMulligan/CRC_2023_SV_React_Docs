@@ -86,3 +86,5 @@ For support or contributions, please refer to the documentation and guidelines o
 
 ## Disclaimer
 This README provides an overview of the `PivotTables` component's usage and features as of the knowledge cutoff date in September 2021. It is recommended to refer to any updated documentation or changes made to the component after this date for the most accurate and up-to-date information.
+
+![aggregation](../../../assets/PivotTable.png)

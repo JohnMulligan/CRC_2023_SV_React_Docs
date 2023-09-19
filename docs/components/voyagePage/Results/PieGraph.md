@@ -56,6 +56,7 @@ function ScrollPage() {
 
 export default App;
 ```
+![aggregation](../../../assets/pie.png)
 
 In this example, a button is used to toggle the visibility of the `PieGraph` component. 
 When the button is clicked, the pie graph will be shown or hidden accordingly.

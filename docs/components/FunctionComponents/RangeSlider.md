@@ -69,7 +69,7 @@ The Range Slider component accepts the following props:
 
 <br/>
 
-![aggregation](../../../assets/rangeSlider.png)
+![aggregation](../../assets/rangeSlider.png)
 
 <br/>
 That's it! You can now use the `RangeSlider` component to provide min and max values in your application.

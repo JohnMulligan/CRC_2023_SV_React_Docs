@@ -36,6 +36,7 @@ FunctionComponents/
   │   │     ├── ShowsAcoloredNodeKey 
   │   ├── PivotTables
   │   │     ├── PivotTables
+  │   │     ├── SelectDropdownPivotable
   │   ├── AutocompletedBox
   │   ├── CustomHeader
   │   ├── DatasetButton

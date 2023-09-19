@@ -1,6 +1,6 @@
-# EnslavedPageScrolling Component
+# EnslaversScrolling Component
 
-The `EnslavedPageScrolling` component is a React functional component that represents a scrolling page for the Enslaved dataset. It includes various dependencies, Redux state management, and event handlers.
+The `EnslaversScrolling` component is a React functional component that represents a scrolling page for the Enslaved dataset. It includes various dependencies, Redux state management, and event handlers.
 
 ## Dependencies
 
@@ -18,7 +18,7 @@ The `EnslavedPageScrolling` component is a React functional component that repre
 - `@/style/page.scss`: Custom styles specific to the page.
 
 ## Usage
-To use the `EnslavedPageScrolling` component, follow these steps:
+To use the `EnslaversScrolling` component, follow these steps:
 
 - Import the necessary dependencies and components:
 ```jsx
@@ -39,9 +39,9 @@ import EnslavedTable from './EnslavedTable';
 import '@/style/page.scss';
 
 ```
-- Implement the `EnslavedPageScrolling` component:
+- Implement the `EnslaversScrolling` component:
 ```jsx
-const EnslavedPageScrolling = () => {
+const EnslaversScrolling = () => {
   // Redux state and dispatch
   const dispatch: AppDispatch = useDispatch();
   const theme = useTheme();
@@ -130,11 +130,13 @@ const EnslavedPageScrolling = () => {
   );
 };
 
-export default EnslavedPageScrolling;
+export default EnslaversScrolling;
+
+
 ```
 
-The `EnslavedPageScrolling` component is a functional component that represents a scrolling page for the Enslaved dataset. It includes various components, Redux state management, and event handlers.
+The `EnslaversScrolling` component is a functional component that represents a scrolling page for the Enslaved dataset. It includes various components, Redux state management, and event handlers.
 
 The component renders the page content based on the currentEnslavedPage state. It includes a navigation bar with buttons for navigating between different sections of the page. The page content is displayed using the `motion.div` component from Framer Motion, allowing for animated transitions between sections. The component also adjusts the positioning and padding based on the screen size and currentEnslavedPage state.
 
-By customizing the content and styles of the `EnslavedPageScrolling` component, you can create a scrolling page tailored to display information about the Enslaved dataset in your application or website.
+By customizing the content and styles of the `EnslaversScrolling` component, you can create a scrolling page tailored to display information about the Enslaved dataset in your application or website.

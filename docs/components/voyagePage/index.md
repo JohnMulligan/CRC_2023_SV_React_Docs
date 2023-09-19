@@ -14,14 +14,13 @@ voyagePage/
 |- VoyagePage.md
 |- Results/
         |- AggregationSumAverage.md 
-        |- AutocompletedBox.md
         |- BarGraph.md 
         |- PieGraph.tsx
-        |- RangeSlider.md 
         |- Scatter.md 
         |- SelectDropdown.md 
-        |- SelectDropdownSingle.md 
-        |- Table.md 
+        |- SelectDropdownPivotable.md 
+        |- VoyagesHomePage.md 
+        |- VoyagesTable.md 
 ```
 
 Example: 
