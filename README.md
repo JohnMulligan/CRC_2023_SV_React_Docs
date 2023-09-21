@@ -1,19 +1,45 @@
-# CRC_2023_SV_React_Docs
+# Voyages_CRC_2023_Docs
 
-installation : 
-```pip install mkdocs```
+This repository contains the documentation for the Voyages_CRC_2023 project, which is a comprehensive platform for exploring historical data related to voyages, enslaved people, and more. This README provides essential information for setting up and navigating the documentation.
 
-To test loacally:
-```mkdocs serve```
- 
-Mkdocs documents: 
- - https://www.mkdocs.org/getting-started/
+## Installation
+To view and work with this documentation locally, you need to have `mkdocs` installed. You can install it using `pip`, the Python package manager:
+```jsx
+pip install mkdocs
+```
 
-## Prerequisites
-Make sure you have Node.js and npm (Node Package Manager) installed on your machine. You can download and install them from the official Node.js website: https://nodejs.org.
+## Usage
+To test the documentation locally, you can use the following command:
+```jsx
+mkdocs serve
+```
+This will launch a local development server, allowing you to view the documentation in your web browser.
 
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Code Structure 
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+
+## Additional Resources
+For more information on using mkdocs or customizing the documentation, refer to the official mkdocs documentation:
+
+- MkDocs Getting Started [https://www.mkdocs.org/getting-started/]
+
+![voyagesHome](./assets/voyagesHome.png)
+
+## Project Structure
+The documentation is organized into sections and follows a structured hierarchy, making it easy to navigate and find specific information. Below is an overview of the key folders and sections:
 ```
 ----main.md
   │   ├── components
@@ -314,3 +340,40 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
   ├── index.html
   
 ```
+
+## Components
+The `components` folder contains documentation related to the various React components used in the Voyages_CRC_2023 project. Components are grouped by feature, making it easier to understand and work with them.
+
+## FetchAPI
+The `fetchAPI` folder provides documentation for the API-related functionality of the project. It includes details about fetching data from various sources and endpoints.
+
+## Pages
+The `pages` folder contains documentation for different pages or sections of the project. Each page's documentation helps users understand its purpose and functionality.
+
+## Redux
+The `redux` folder explains how Redux is used within the project, including details about the slices and reducers responsible for managing application state.
+
+## Share
+The `share` folder contains shared resources, constants, and interface types that are used across different parts of the project.
+
+## Style and StyleMUI
+The `style` and `styleMUI` folders contain stylesheet files used for styling the project. They provide documentation for the project's styling approach.
+
+## Tests
+The `tests` folder contains documentation related to testing within the project, including unit tests, Redux tests, and utility tests.
+
+## Utils
+The `utils` folder explains the utility functions used throughout the project. It provides insights into how data is processed and transformed.
+
+## Other Files
+- `App.js:` The main application file.
+- `main.md:` The main documentation file.
+- `env:` Environment configuration.
+- `eslintrc:` ESLint configuration.
+- `.gitignore:` Git ignore file.
+- `index.html:` HTML entry point for the project.
+
+## Contribution
+Contributions to this documentation are welcome. If you find any issues, errors, or would like to contribute improvements, please follow the contribution guidelines outlined in the project repository.
+
+Thank you for using the Voyages_CRC_2023 documentation! We hope it helps you navigate and understand this valuable historical data resource.
