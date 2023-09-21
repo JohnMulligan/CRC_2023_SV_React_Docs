@@ -2,6 +2,9 @@
 
 This repository contains the documentation for the Voyages_CRC_2023 project, which is a comprehensive platform for exploring historical data related to voyages, enslaved people, and more. This README provides essential information for setting up and navigating the documentation.
 
+![voyagesHome](./docs/assets/voyagesHome.png)
+
+
 ## Installation
 To view and work with this documentation locally, you need to have `mkdocs` installed. You can install it using `pip`, the Python package manager:
 ```jsx
@@ -36,7 +39,6 @@ For more information on using mkdocs or customizing the documentation, refer to 
 
 - MkDocs Getting Started [https://www.mkdocs.org/getting-started/]
 
-![voyagesHome](./assets/voyagesHome.png)
 
 ## Project Structure
 The documentation is organized into sections and follows a structured hierarchy, making it easy to navigate and find specific information. Below is an overview of the key folders and sections:
