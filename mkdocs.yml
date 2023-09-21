@@ -1,5 +1,5 @@
 site_name: Voyages Documentations
 theme:
-  name: mkdocs
+  name: readthedocs
 extra_css:
-  - custom.css
+  - stylesheets/extra.css
