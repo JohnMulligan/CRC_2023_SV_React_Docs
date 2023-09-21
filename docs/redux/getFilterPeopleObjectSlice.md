@@ -1,4 +1,4 @@
-# Redux Store: getFilterPeopleObjectSlice
+# getFilterPeopleObjectSlice
 
 Filter People Object Redux Slice
 This code defines a Redux slice for managing a filter menu object used to filter people. The slice is created using the createSlice function from the @reduxjs/toolkit library.
@@ -89,6 +89,12 @@ const filterMenuObject = {
 dispatch(getFilterPeopleObject(filterMenuObject));
 
 ```
+
+## Additional Information
+Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing dataset collections. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
+
+
 This will update the state with the new filter menu object and trigger any relevant Redux state updates or subscriptions.
 
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
 Note: Make sure to adjust the import paths according to your project structure.

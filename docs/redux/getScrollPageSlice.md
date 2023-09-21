@@ -1,4 +1,4 @@
-# Redux Store: getScrollPageSlice
+# getScrollPageSlice
 The getScrollPageSlice slice in the Redux store manages the state related to scrolling functionality in the application.
 
 ### Slice Configuration
@@ -49,5 +49,13 @@ const isOpenDialog = useSelector(state => state.getScrollPage.isOpenDialog);
 
 
 ```
+
+
+## Additional Information
+Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing data list values. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
+
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
+
+Note: Make sure to adjust the import paths according to your project structure.
 
 

@@ -1,147 +1,43 @@
-# HomePage
-This is a React functional component named `HomePage` that represents the home page for a project related to voyages and enslaved people. It provides a layout with various sections and functionality for searching, navigating, and accessing resources.
+# HomePage Component
 
-## Dependencies
-This code has the following dependencies:
+## Overview
+The `HomePage` component is a React functional component designed to render the homepage of a web application. It includes various sub-components that make up the homepage, such as a video background, menu buttons, search bar, and more. This documentation will provide a detailed explanation of the `HomePage` component and its structure.
 
-- `React library:` This code uses React to define and render the component.
-- `react-router-dom:` This code uses React Router for handling navigation and linking to different routes.
-- `react-redux:` This code uses Redux for managing the application state.
-
-## Usage
-To use this component, follow these steps:
-
-1) Make sure you have the required dependencies installed.
-2) Import the necessary components, assets, and styles:
-- `SearchIcon` from the `@mui/icons-material/Search` module.
-- `MenuButtonHomePage` from the `@/components/Home/Menu` module.
-- `Link` from the `react-router-dom`module.
-- `Search`, `SearchIconWrapper`, and `StyledInputBase` from the `@/styleMUI` module.
-- Assets from various paths `(@/assets/...)`.
-- Styles from the `@/style/homepage.scss` file.
-3) Use the `HomePage` component in your application by rendering it as part of your page structure.
-4) Customize the imported components, assets, and styles or add additional components and functionality as needed.
-
-## Example
+## Import Statements
 ```jsx
 import React from 'react';
-import voyageLogo from '@/assets/logo-voyage.svg';
-import voyageText from '@/assets/slave-text.svg';
-import SearchIcon from '@mui/icons-material/Search';
-import voyageIcon from '@/assets/voyage-cycle.svg';
-import peopleIcon from '@/assets/people-cycle.svg';
-import documentIcon from '@/assets/documents.svg';
-import resourceIcon from '@/assets/resources.svg';
-import { Search, SearchIconWrapper, StyledInputBase } from '@/styleMUI';
 import MenuButtonHomePage from '@/components/Home/Menu';
-import { Link } from 'react-router-dom';
+import VideoBackground from '../components/Home/VideoBackground';
+import HomeListCard from '@/components/Home/HomeSearch';
 import '@/style/homepage.scss';
-import { AppDispatch } from '@/redux/store';
-import { useDispatch } from 'react-redux';
-import { ALLENSLAVED, ALLVOYAGES } from '@/share/CONST_DATA';
-import { setPathName } from '@/redux/getDataSetCollectionSlice';
+import SlaveVoyageLogo from '@/components/Home/SlaveVoyageLogo';
+import AutoGlobalSearchBar from '@/components/Home/AutoGlobalSearchBar';
+```
 
-const MyHomePage: React.FC = () => {
-  const dispatch: AppDispatch = useDispatch();
+- `React:` The React library is imported to create React components.
+- `MenuButtonHomePage:` This component is imported and likely represents a menu button for navigation on the homepage.
+- `VideoBackground:` This component is imported and is responsible for rendering a video background.
+- `HomeListCard:` This component is imported and seems to be related to listing cards on the homepage.
+- `homepage.scss:` This stylesheet is imported to apply styles to the components on the homepage.
+- `SlaveVoyageLogo:` This component is imported and is likely responsible for rendering a logo related to "Slave Voyage."
+- `AutoGlobalSearchBar:` This component is imported and appears to be a global search bar.
 
+### `HomePage` Component
+
+```jsx
+const HomePage: React.FC = () => {
   return (
-    <div>
-      {/* Render the MenuButtonHomePage component */}
+    <div id="home-voyagepage-container" style={{ zIndex: 100 }}>
+      <VideoBackground />
       <MenuButtonHomePage />
-
       <div className="home-voyagepage-content">
-        {/* Header section */}
-        <div className="header-logo-slave-voyages">
-          {/* Render the voyageLogo image */}
-          <div className="voyageLogo-img">
-            <img src={voyageLogo} alt="voyageLogo" />
-          </div>
-
-          <div className="voyage-text-box">
-            {/* Render the voyageText image */}
-            <div>
-              <img src={voyageText} alt="voyageText" />
-            </div>
-
-            <div className="voyage-description">
-              Explore the origins and forced relocations of more than 12 million
-              Enslaved Africans across the world
-            </div>
-          </div>
-        </div>
-
-        {/* Search box */}
+        <SlaveVoyageLogo />
         <div className="voyages-search-box">
-          <Search className="voyages-search-box-content">
-            <SearchIconWrapper>
-              {/* Render the SearchIcon */}
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder=""
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-        </div>
-
-        {/* Voyages, People, Places section */}
-        <div className="voyages-people-places">
-          {/* Voyages */}
-          <div className="voyage-page-box">
-            <div className="voyages-people-places-title">Voyages</div>
-            {/* Link to the VoyagesPage and dispatch an action */}
-            <Link
-              to="/VoyagesPage"
-              onClick={() => dispatch(setPathName(ALLVOYAGES))}
-            >
-              {/* Render the voyageIcon */}
-              <img src={voyageIcon} alt="voyages" />
-            </Link>
-            <div className="voyages-people-places-subtitle">
-              Search by vessel
-            </div>
-          </div>
-
-          {/* People */}
-          <div className="people-page-box">
-            <div className="voyages-people-places-title">People</div>
-            {/* Link to the PastHomePage and dispatch an action */}
-            <Link
-              to="/PastHomePage"
-              onClick={() => dispatch(setPathName(ALLENSLAVED))}
-            >
-              {/* Render the peopleIcon */}
-              <img src={peopleIcon} alt="voyages" />
-            </Link>
-            <div className="voyages-people-places-subtitle">Find a person</div>
-          </div>
-
-          {/* Documents */}
-          <div className="place-page-box">
-            <div className="voyages-people-places-title">Documents</div>
-            <Link to="#">
-              {/* Render the documentIcon */}
-              <img src={documentIcon} alt="voyages" width={129} />
-            </Link>
-            <div className="voyages-people-places-subtitle">
-              Read Primary Sources
-            </div>
-          </div>
-
-          {/* Writing */}
-          <div className="place-page-box">
-            <div className="voyages-people-places-title">Writing</div>
-            <Link to="#">
-              {/* Render the resourceIcon */}
-              <img src={resourceIcon} alt="voyages" width={129} />
-            </Link>
-            <div className="voyages-people-places-subtitle">
-              Lesson Plans, Essays, and More
-            </div>
+          <div className="voyages-search-box-content">
+            <AutoGlobalSearchBar />
           </div>
         </div>
-
-        {/* Document and Resources section */}
+        <HomeListCard />
         <div className="document-resources-container">
           <div className="about-project">
             <div className="about-project-btn">About the Project</div>
@@ -151,11 +47,38 @@ const MyHomePage: React.FC = () => {
     </div>
   );
 };
-
-export default MyHomePage;
-
 ```
 
-In the above example, the `HomePage` component is used within a parent component named `MyHomePage`. The imported components, assets, and styles are rendered within the `MyHomePage` component, providing the necessary structure and functionality for the project's home page.
+The `HomePage` component is defined as a functional component with no props `(React.FC).`
 
-Please note that this code assumes the presence of specific module paths `(@/components/...`, `@/assets/...`, `@/styleMUI`, `@/redux/...`, `@/share/..`.) and a specific style file `(@/style/homepage.scss)`. Ensure that these paths are correctly configured in your project before using this code.
+## Component Structure
+1) `div` with `id="home-voyagepage-container":` This is the top-level container for the homepage. It has a `zIndex` style property set to 100.
+
+2) `<VideoBackground />:` This component is rendered within the top-level container and is responsible for displaying the video background.
+
+3) `<MenuButtonHomePage />:` This component is rendered within the top-level container and likely represents menu buttons for navigation.
+
+4) `div` with `className="home-voyagepage-content":` This div contains the main content of the homepage.
+
+    - `<SlaveVoyageLogo />: `This component is rendered within the content div and is responsible for displaying the "Slave Voyage" logo.
+
+    - `div` with `className="voyages-search-box":` This div likely represents a search box or container.
+
+    - `div` with `className="voyages-search-box-content":` This div contains the content of the search box, which includes the `<AutoGlobalSearchBar />` component.
+    - `<HomeListCard />:` This component is rendered within the content div and is responsible for rendering a list of cards related to home search.
+
+    - `div` with `className="document-resources-container":` This div represents a container for document resources.
+
+    - `div` with `className="about-project":` This div likely represents information about the project.
+
+    - `div` with `className="about-project-btn":` This div likely represents a button or link to access information about the project.
+
+
+## Export Statement
+```jsx
+export default HomePage;
+```
+
+The `HomePage` component is exported as the default export of this module, making it available for use in other parts of the application.
+
+This documentation provides an overview of the `HomePage` component, its structure, and its dependencies. Developers can use this information to understand and work with this component in their React application.

@@ -1,4 +1,4 @@
-# Redux Store: getOptionsDataSlice
+# getOptionsDataSlice
 
 ### Slice Configuration
 ```getOptionsDataSlice```: The getOptionsData data includes information about different filter objects, such as the variable name, type, label, and flatable. This data is used throughout the app in various filter objects.
@@ -45,3 +45,9 @@ const menuOptionFlat: VoyagaesFilterMenu = useSelector((state: RootState) => sta
 ```
 
 
+## Additional Information
+Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing dataset collections. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
+
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
+
+Note: Make sure to adjust the import paths according to your project structure.

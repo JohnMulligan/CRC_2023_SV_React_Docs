@@ -3,8 +3,11 @@
 ## Pages Folder Structure
 
 pages
+|── AuthorPage
+|── Blog
 |── Enslaved
 ├── Enslavers
-├── Home
-├── PastPage
+├── Home 
+├── InstitutionAuthorsPage
+├── PastHomePage
 └── VoyagesPage

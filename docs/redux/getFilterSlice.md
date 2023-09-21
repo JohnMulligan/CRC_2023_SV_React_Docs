@@ -1,4 +1,4 @@
-# Redux Store: getFilterSlice
+# getFilterSlice
 This code defines a Redux slice for managing a filter state. The slice is created using the `createSlice` function from the `@reduxjs/toolkit` library.
 
 ## Usage

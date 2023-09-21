@@ -105,4 +105,6 @@ In this example, the `SelectBlogDropdown` component is used within a component t
 ## License
 This component is subject to its respective license. Ensure that you comply with the license terms when using this component.
 
-Feel free to customize and extend the `SelectBlogDropdown` component to suit your specific project requirements. Ensure that your component's state and data are correctly configured to work with the dropdown menu, and set up your component hierarchy accordingly to integrate it into your application. If you encounter any issues or have questions, please refer to your project's documentation or seek assistance from the development team.
+Feel free to customize and extend the `SelectBlogDropdown` component to suit your specific project requirements. 
+
+Ensure that your component's state and data are correctly configured to work with the dropdown menu, and set up your component hierarchy accordingly to integrate it into your application. If you encounter any issues or have questions, please refer to your project's documentation or seek assistance from the development team.

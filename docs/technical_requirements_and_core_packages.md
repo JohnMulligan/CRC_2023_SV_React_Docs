@@ -1,4 +1,4 @@
-# CRC_2023_SV_React_Docs
+# Technical Requirements And Core Packages
 
 This documentation will guide you through the process of setting up a Vite React app with TypeScript, Redux Toolkit, and Material UI. Follow the steps below to get started.
 

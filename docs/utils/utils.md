@@ -1,14 +1,19 @@
 # Utils Folder
 The "utils" folder in this application contains utility functions and helper modules that provide various commonly used functionalities across different parts of the application. These utilities serve to improve code organization, reusability, and maintainability.
 
-```
+```jsx
 │── utils
 │     ├── flatfiles --> all json files
 │     │     ├── african_origins_filter_menu.json
 │     │     ├── african_origins_table_cell_structure.json
+│     │     ├── enslaved_card.json
 │     │     ├── enslaved_filter_menu.json
-│     │     ├── enslaved_options.json
-│     │     ├── enslaved_table_cell_structure.json
+│     │     ├── enslaved_options.json 
+│     │     ├── enslavers_card.json 
+│     │     ├── ENSLAVERS_COLLECTIONS.json
+│     │     ├── enslavers_filter_menu.json
+│     │     ├── enslaved_table_cell_structure.json 
+│     │     ├── PEOPLE_COLLECTIONS.json
 │     │     ├── enslaver_options.json
 │     │     ├── people_page_data.json
 │     │     ├── texas_filter_menu.json
@@ -19,17 +24,41 @@ The "utils" folder in this application contains utility functions and helper mod
 │     │     ├── VOYAGE_BARGRAPH_OPTIONS.json
 │     │     ├── VOYAGE_COLLECTIONS.json
 │     │     ├── VOYAGE_PIECHART_OPTIONS.json
+│     │     ├── VOYAGE_PIVOT_OPTIONS.json
 │     │     ├── VOYAGE_SCATTER_OPTIONS.json
 │     │     ├── voyage_table_cell_structure__updated21June.json
 │     ├── functions
+│     │     ├── convertDataToGeoTreeSelectFormat.ts
+│     │     ├── convertToSlug.ts
+│     │     ├── createdLableNode.ts
+│     │     ├── createNodeDict.ts
+│     │     ├── extractVarNamesTest.ts
+│     │     ├── formatCount.ts
+│     │     ├── formatText.ts
+│     │     ├── formatType.ts
+│     │     ├── generateCardsData.ts
+│     │     ├── generateColumnDef.ts
 │     │     ├── generateRowsData.ts
-│     │     ├── getRowsPerPage.ts
 │     │     ├── getColorStyle.ts
+│     │     ├── getGeoValuesCheck.ts
+│     │     ├── getMapBackgroundColor.ts
+│     │     ├── getMinMaxEdges.ts
+│     │     ├── getMinMaxValueNode.ts
+│     │     ├── getNodeColorStyle.ts
+│     │     ├── getNodeSize.ts
+│     │     ├── getOptionLabelSearchGlobal.tsx
+│     │     ├── getRowsPerPage.ts
 │     │     ├── hasValueGetter.ts
-│     │     ├── TableCollectionsOptions.ts
+│     │     ├── languages.ts
+│     │     ├── maxWidthSize.ts
+│     │     ├── pageVariantsFromTop.ts
+│     │     ├── processCardData.ts
+│     │     ├── TableAndCardCollectionsOptions.ts
 │     │     ├── traverseData.ts
-```
+│     │     ├── updateColumnDefsAndRowData.tsx
 
+
+```
 The folder contains multiple utility files, each focusing on a specific area or functionality. This modular approach allows for easier maintenance and separation of concerns.
 
 - ```getEnumColumnParams.ts```
@@ -74,7 +103,7 @@ in the <code>BarGraph.tsx</code> and  <code>Scatter.tsx</code>
 
 
 - <code>Scatter.tsx</code>
-![Scatter](../assets/scatterDropdown.png)
+![Scatter](../assets/scatter.png)
 
 - <code>BarGraph.tsx</code> 
 ![Scatter](../assets/barGraphDropdown.png)

@@ -1,4 +1,4 @@
-# Fetch API Folder
+# Fetch API
 
 This Readme file provides an explanation of the Fetch API folder and how to use it in the application.
 
@@ -9,21 +9,44 @@ The Fetch API folder contains modules and utilities related to making HTTP reque
 ## Folder Structure
 ```
 fetchAPI
+|──blogApi
+    ├── fetchAuthorData.ts
+    ├── fetchBlogAutoCompleted.ts
+    ├── fetchBlogData.ts
+    ├── fetchInstitutionDataAPI.ts
+|──geoApi
+    ├── fetchEnslavedGeoTreeSelect.ts
+    ├── fetchEnslaversGeoTreeSelect.ts
+    ├── fetchVoyagesGeoTreeSelect.ts
+|──homeApi
+    ├── fetchSearchGlobal.ts
 |──pastEnslavedApi
+    ├── fetchEnslavedMap.ts
     ├── fetchPastEnslavedApiService.ts
     ├── fetchPastEnslavedAutoCompleted.ts
+    ├── fetchPastEnslavedOptionsApi.ts
     ├── fetchPastEnslavedOptionsList.ts
-    ├── fetchPastEnslavedSortedTableData
     ├── fetchPastEnslavedRangeSliderData.ts
-|──voyagesApi
+    ├── fetchPastEnslavedSortedTableData.ts
+    ├── fetchPastNetworksGraph.ts
+|──pastEnslaversApi
+    ├── fetchPastEnslaversApiService.ts
+    ├── fetchPastEnslaversAutoCompleted.ts
+    ├── fetchPastEnslaversOptionsApi.ts
+    ├── fetchPastEnslaversOptionsList.ts
+    ├── fetchPastEnslaversRangeSliderData.ts
+    ├── fetchPastEnslaversSortedTableData.ts
+|──voyagesApi 
+    ├── fetchApiPivotCrosstabsTables.ts
     ├── fetchApiService.ts
-    ├── fetchAutoCompleted.ts
+    ├── fetchAutoVoyageComplete.ts
     ├── fetchOptionsData.ts
     ├── fetchOptionsFlat.ts
     ├── fetchRangeSliderData.ts 
     ├── fetchVoyageGroupby.ts
-    ├── fetchVoyageOptionsPagination.ts
     ├── fetchVoyagesOptionsApi.ts
+    ├── fetchVoyagesMap.ts
+    ├── fetchVoyagesOptionsApi
     └── fetchVoyageSortedData.ts
 
 

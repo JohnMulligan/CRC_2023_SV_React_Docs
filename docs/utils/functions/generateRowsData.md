@@ -1,4 +1,5 @@
-## generateRowsData Function
+# generateRowsData Function
+
 This function is used to generate rows of data for a table based on a given array of `VoyageOptionsGropProps`. It utilizes the `traverseData` function and the `TableCollectionsOptions` module to extract specific values from the data and organize them into an array of objects.
 
 ## Usage

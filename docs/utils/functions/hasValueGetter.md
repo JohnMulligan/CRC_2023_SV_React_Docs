@@ -1,4 +1,5 @@
-## hasValueGetter Function
+# hasValueGetter Function
+
 This function is a utility function used in the context of rendering table cells in the ag-Grid library. It extracts and combines values from the provided data object based on a specified cell structure, and returns the resulting value.
 
 ## Usage

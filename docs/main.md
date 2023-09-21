@@ -1,4 +1,4 @@
-# CRC_2023_SV_React_Docs
+# Voyages CRC 2023 Docs
 
 The Voyages-Frontend React App interfaces with the Voyages-API Django app.
 
@@ -8,14 +8,25 @@ We have attempted to adopt a factory model for as many of the components as poss
 
 Using token-based authentication, it makes POST requests to retrieve data from several API endpoints that map fairly closely to the React app's routing structure
 
-* API ENDPOINT --> REACT ROUTE (tp60, correct these for me?)
-* voyage/ --> voyage/
-* past/ --> past/
-	* past/enslaved --> past/enslaved
-	* past/enslaver --> past/enslaver
-* blog/ --> TBD
+* API ENDPOINT --> REACT ROUTE
+* VoyagesPage/ --> VoyagesPage/
+	* VoyagesPage/voyage/all-voyages --> VoyagesPage/voyage/all-voyages
+	* VoyagesPage/voyage/intra-american --> VoyagesPage/voyage/intra-american
+	* VoyagesPage/voyage/trans-atlantic --> VoyagesPage/voyage/trans-atlantic
+	* VoyagesPage/voyage/texas --> VoyagesPage/voyage/texas
+
+* PastHomePage/ --> PastHomePage/
+	* PastHomePage/enslaved/all-enslaved --> PastHomePage/enslaved/all-enslaved
+	* PastHomePage/enslaved/african-origins --> PastHomePage/enslaved/african-origins
+	* PastHomePage/enslaved/texas --> PastHomePage/enslaved/texas
+	* PastHomePage/enslaver --> PastHomePage/enslaver
+
+* Blog/ --> Blog/
+	* /Blog/author/ --> /Blog/author/
+	* /Blog/institution/ --> /Blog/institution/
+
 * doc/ --> TBD
-* geo/ --> N/A
+
 
 These main data retrieval endpoints map fairly closely to the React app's routing structure:
 
@@ -91,13 +102,15 @@ When these filter components are interacted with by the user, the selected value
 
 "Presentation" components are where the user sees the results of the queries they have made. Our presentation components
 
+* Intro
+* Table
 * Scatter Graph
 * Bar Graph
 * Pie Graph
-* Table
-* Map (to come)
+* Pivot Table
+* Map
 	* Geo Sankeys
 	* Animations
-* Pivot Table (to come)
+
 
 Presentation components subscribe to the Redux store, and update when its contents update. This allows the user to select a filter, begin using it, and immediately see the results of the presentation component update on the basis of their choices. All components on a given collection page subscribe to the same store.

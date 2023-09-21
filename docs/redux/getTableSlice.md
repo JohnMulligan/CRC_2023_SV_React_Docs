@@ -1,4 +1,4 @@
-## Table Data Redux Slice
+# getTableSlice
 This code defines a Redux slice for managing table data and configuration. The slice is created using the `createSlice` function from the `@reduxjs/toolkit` library.
 
 ## Usage
@@ -100,7 +100,12 @@ dispatch(setColumnDefs(columnDefinitions));
 dispatch(setTableOptions(tableOptions));
 
 ```
+## Additional Information
+Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing data list values. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
+
 
 This will update the state with the new values and trigger any relevant Redux state updates or subscriptions.
+
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
 
 Note: Make sure to adjust the import paths according to your project structure.

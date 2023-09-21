@@ -1,0 +1,5 @@
+site_name: Voyages Documentations
+theme:
+  name: mkdocs
+extra_css:
+  - custom.css

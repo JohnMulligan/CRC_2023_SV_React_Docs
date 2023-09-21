@@ -1,4 +1,4 @@
-# Redux Store: getOptionsDataPastPeopleEnslavedSlice
+# getOptionsDataPastPeopleEnslavedSlice
 
 This code defines a Redux slice for managing options data related to past enslaved people. The slice is created using the `createSlice` function from the `@reduxjs/toolkit` library.
 

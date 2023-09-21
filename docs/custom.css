@@ -1,0 +1,10 @@
+/* Move the navigation menu to the left */
+.md-nav {
+    float: left;
+    width: 250px; /* Adjust the width as needed */
+}
+
+/* Adjust the main content to accommodate the menu */
+.md-main {
+    margin-left: 270px; /* Adjust the margin to match the menu width */
+}

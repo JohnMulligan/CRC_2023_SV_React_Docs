@@ -1,5 +1,4 @@
-# Redux Store: getDataSetCollectionSlice
-
+# getDataSetCollectionSlice
 
 This documentation provides an overview of the code presented, which defines a Redux slice for managing dataset collections in an application. Follow the guide below to understand how to use and customize this code.
 

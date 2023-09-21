@@ -1,4 +1,4 @@
-# Redux Store: getAutoCompleteSlice
+# getAutoCompleteSlice
 
 ### Slice Configuration
 ```getAutoCompleteSlice```: The autocomplete data includes information about different results, such as the ID and label, when the user utilizes the autocomplete feature to select data.
@@ -54,4 +54,9 @@ dispatch(setIsChangeAuto(true));
 
 
 ```
+## Additional Information
+Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing auto list values. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
 
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
+
+Note: Make sure to adjust the import paths according to your project structure.

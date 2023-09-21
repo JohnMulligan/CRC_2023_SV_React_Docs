@@ -1,4 +1,4 @@
-# Redux Store: rangeSliderSlice
+# getRangeSliderSlice
 The rangeSliderSlice slice in the Redux store manages the state related to range slider functionality in the application.
 
 ### Slice Configuration
@@ -45,3 +45,10 @@ const rangeValue = useSelector(state => state.rangeSlider.rangeValue);
 const varName = useSelector(state => state.rangeSlider
 const { rangeValue, varName, rangeSliderMinMax } = useSelector((state: RootState) => state.rangeSlider as RangeSliderState);
 ```
+
+## Additional Information
+Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing data list values. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
+
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
+
+Note: Make sure to adjust the import paths according to your project structure.

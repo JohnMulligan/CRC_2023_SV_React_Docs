@@ -1,4 +1,5 @@
-## Color Utility Functions
+# Color Utility Functions
+
 This code defines a set of utility functions for obtaining colors and styles based on input values. These functions can be used to customize the appearance of various elements in an application.
 
 ## Usage

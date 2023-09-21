@@ -1,4 +1,5 @@
 # getRowsPerPage Function
+
 This function is used to determine the number of rows per page in a table based on the dimensions of the window. It utilizes a predefined set of breakpoints to determine the appropriate number of rows based on the window width and height.
 
 ## Usage

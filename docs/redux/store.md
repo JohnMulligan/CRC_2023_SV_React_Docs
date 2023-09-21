@@ -1,102 +1,74 @@
-# Redux Store
-The Redux store in the Voyages application serves as a centralized data store that holds the application state. It follows the principles of the Redux architecture and facilitates predictable state management.
+# Redux Store Configuration Documentation
+## Overview
+The provided code configures a Redux store for a React application using Redux Toolkit. This store manages the state of the application by combining reducers from various slices and middleware. It also sets up API middleware for handling asynchronous actions using Redux Toolkit's `createAsyncThunk` and `createSlice`.
 
 
-## Store Structure
-The store is structured as follows:
-
-```
-store/
-|- actions && reducer/
-        |- getAutoCompleteSlice
-        |- getColumnSlice
-        |- getDataSetCollectionSlice
-        |- getFilterPeopleObjectSlice
-        |- getFilterSlice
-        |- getOptionsDataPastPeopleEnslavedSlice
-        |- getOptionsDataSlice
-        |- getOptionsFlatObjSlice 
-        |- getPeopleDataSetCollectionSlice
-        |- getScrollEnslavedPageSlice
-        |- getScrollPageSlice 
-        |- getTableSlice
-        |- rangeSliderSlice 
-|- store.js
-
-```
-
-### `Actions`: 
-This directory contains action-related files, which defines the action types used in the application and contains action creators for managing voyage-related data.
-
-### `Reducers`: 
-This directory contains reducer functions responsible for handling specific parts of the application state. For example, getAutoCompleteSlice.js manages the voyage-related data in the store.
-
-### `store.ts`: 
-This file creates the Redux store by combining the reducers, applying middleware, and providing initial state or enhancers if necessary.
-
-## `State Managemen`t
-The Redux store in the Voyages application manages the following parts of the application state:
-
-
-![configStoreRedux](../assets/configStoreRedux.png)
-
-## Usage
-
-```jsx
-import { configureStore } from '@reduxjs/toolkit';
-import getOptionsDataSlice from './getOptionsDataSlice';
-import rangeSliderSlice from './rangeSliderSlice';
-import getAutoCompleteList from './getAutoCompleteSlice'
-import getOptionsFlatMenu from './getOptionsFlatObjSlice'
-import getScrollPageSlice from './getScrollPageSlice'
-import getTableSlice from './getTableSlice'
-import { voyagesApi } from '../fetchAPI/voyagesApi/fetchApiService';
-import { setupListeners } from '@reduxjs/toolkit/dist/query';
-import getFilterSlice from './getFilterSlice';
-import getColumnsSlice from './getColumnSlice';
-import getDataSetCollectionSlice from './getDataSetCollectionSlice'
-import getPeopleDataSetCollectionSlice from './getPeopleDataSetCollectionSlice';
-import getScrollEnslavedPageSlice from './getScrollEnslavedPageSlice';
-import getFilterPeopleObjectSlice from './getFilterPeopleObjectSlice';
-import getOptionsDataPastPeopleEnslavedSlice from './getOptionsDataPastPeopleEnslavedSlice';
-import { pastEnslavedApiService } from '@/fetchAPI/pastEnslavedApi/fetchPastEnslavedApiService';
-
-const store = configureStore({
-    reducer: {
-        getOptions: getOptionsDataSlice,
-        rangeSlider: rangeSliderSlice,
-        autoCompleteList: getAutoCompleteList,
-        optionFlatMenu: getOptionsFlatMenu,
-        getScrollPage: getScrollPageSlice,
-        getTableData: getTableSlice,
-        getFilter: getFilterSlice,
-        getColumns: getColumnsSlice,
-        getDataSetCollection: getDataSetCollectionSlice,
-        getPeopleDataSetCollection: getPeopleDataSetCollectionSlice,
-        getScrollEnslavedPage: getScrollEnslavedPageSlice,
-        getFilterPeople: getFilterPeopleObjectSlice,
-        getOptionsEnslaved: getOptionsDataPastPeopleEnslavedSlice,
-        [pastEnslavedApiService.reducerPath]: pastEnslavedApiService.reducer,
-        [voyagesApi.reducerPath]: voyagesApi.reducer
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: false,
-        }).concat([voyagesApi.middleware, pastEnslavedApiService.middleware])
-});
-
-setupListeners(store.dispatch);
-
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-
-export default store;
-
-
-
-```
+## Dependencies
+- Redux Toolkit: This code utilizes Redux Toolkit, a library that simplifies the setup of Redux store and actions.
+- Redux API Middleware: Middleware for handling API requests asynchronously is set up for multiple API services `(voyagesApi, pastEnslavedApiService, pastEnslaversApiService)`.
 
 ## Store Configuration
-The Redux store in the Voyages application is configured by combining the reducers using the combineReducers function from Redux. Middleware can be applied using Redux middleware libraries, and the initial state or enhancers can be provided as needed.
+The Redux store is configured using `configureStore` from Redux Toolkit. It includes the following components:
 
-Please refer to the individual slice files in the actions && reducer directory for more specific information on each slice of the application state.
+## Reducers
+The store combines multiple reducers, each corresponding to a specific slice of the application's state. The reducers are defined for the following slices:
+
+
+- `getOptionsDataSlice`
+- `rangeSliderSlice`
+- `getAutoCompleteList`
+- `getOptionsFlatMenu`
+- `getScrollPageSlice`
+- `getTableSlice`
+- `getFilterSlice`
+- `getColumnsSlice`
+- `getDataSetCollectionSlice`
+- `getPeopleEnslavedDataSetCollectionSlice`
+- `getPeopleEnslaversDataSetCollectionSlice`
+- `getScrollEnslavedPageSlice`
+- `getScrollEnslaversPageSlice`
+- `getFilterPeopleObjectSlice`
+- `getOptionsDataPastPeopleEnslavedSlice`
+- `getBlogDataSlice`
+- `getLanguagesSlice`
+- `getCommonGlobalSearchResultSlice`
+- `getPastNetworksGraphDataSlice`
+- `getNodeEdgesAggroutesMapDataSlice`
+- `getCardFlatObjectSlice`
+- `getPivotTablesDataSlice`
+- `getGeoTreeDataSlice`
+- `getDataPathNameSlice`
+- `voyagesApi.reducer` (API middleware)
+- `pastEnslavedApiService.reducer` (API middleware)
+- `pastEnslaversApiService.reducer` (API middleware)
+## Middleware
+Middleware is configured to handle asynchronous actions, particularly API requests. The following middleware is used:
+
+- Redux Toolkit's `getDefaultMiddleware` is extended to include API middleware for `voyagesApi`, `pastEnslavedApiService`, and `pastEnslaversApiService`. This middleware is used for handling API calls and asynchronous actions.
+
+## Redux Toolkit's `setupListeners`
+The `setupListeners` function from Redux Toolkit is used to set up listeners for the API services, allowing the store to react to events such as API requests and responses.
+
+## Exported Types
+- `AppDispatch`: A type representing the dispatch function used in the application. It is based on the `dispatch` function of the Redux store.
+- `RootState`: A type representing the root state of the Redux store. It is based on the result type of the `store.getState()` function.
+
+## Usage
+This configured Redux store can be used throughout the application to manage and access the application's state. Components can dispatch actions to update the state and select data from the state using Redux Toolkit's hooks and selectors.
+
+## Example Usage
+```jsx
+import { useDispatch, useSelector } from 'react-redux';
+import { setOptionsData } from './getOptionsDataSlice';
+
+// Dispatching an action to update the state
+const dispatch = useDispatch();
+dispatch(setOptionsData({ /* data to update */ }));
+
+// Selecting data from the state
+const optionsData = useSelector((state) => state.getOptions.data);
+```
+
+Feel free to modify the initial state, actions, and reducer based on your specific requirements.
+
+Note: Make sure to adjust the import paths according to your project structure.

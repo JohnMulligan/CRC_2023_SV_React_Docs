@@ -1,4 +1,5 @@
 # traverseData Function
+
 The `traverseData` function is used to traverse and extract data from nested objects or arrays based on a given variable array. It recursively searches through the provided data object and returns the value specified by the variable array.
 
 ## Usage

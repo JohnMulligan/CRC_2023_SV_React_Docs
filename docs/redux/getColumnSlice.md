@@ -1,4 +1,4 @@
-# Redux Store: getColumnsSlice
+# getColumnsSlice
 
 This code snippet defines a Redux slice for managing columns in a table. 
 It exports actions and a reducer for manipulating the state related to table columns.
@@ -69,3 +69,5 @@ export default getColumnsSlice.reducer;
 Ensure that you have the required dependencies installed and properly configured before using this code. This code is intended to be used in a Redux-based application for managing table columns. Refer to the Redux documentation for more details on incorporating this slice into your Redux store.
 
 Feel free to modify the initial state, actions, and reducer based on your specific requirements.
+
+Note: Make sure to adjust the import paths according to your project structure.
